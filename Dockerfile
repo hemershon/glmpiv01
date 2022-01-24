@@ -44,6 +44,9 @@ ENV RAILS_LOG_TO_STDOUT true
 
 COPY . /app/
 
+RUN bundle exec rails webpacker:verify_install
+RUN SECRET_KEY_BASE=nein bundle exec rails assets:precompile
+
 EXPOSE 3000
 
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
