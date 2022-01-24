@@ -1,4 +1,4 @@
-image: ruby:3.1.0-alpine
+image: ruby:3.1.0
 
 stages:
   - build
@@ -18,17 +18,17 @@ build:
     paths:
       - ./
 
-staging:
-  stage: staging
-  variables:
-    HEROKU_API_KEY: $HEROKU_STAGING_API_KEY
-  script:
-    - echo "deb http://toolbelt.heroku.com/ubuntu ./" > /etc/apt/sources.list.d/heroku.list
-    - wget -O- https://toolbelt.heroku.com/apt/release.key | apt-key add -
-    - apt-get update
-    - apt-get install -y -qq nodejs build-essential heroku-toolbelt
-    - gem install dpl
-    - dpl --provider=heroku --app=staging-masonicmanagement --api-key=$HEROKU_STAGING_API_KEY
-    - heroku run rake db:migrate db:seed --exit-code --app staging-masonicmanagement
-  only:
-    - develop
+#staging:
+#  stage: staging
+#  variables:
+#    HEROKU_API_KEY: $HEROKU_STAGING_API_KEY
+#  script:
+#    - echo "deb http://toolbelt.heroku.com/ubuntu ./" > /etc/apt/sources.list.d/heroku.list
+#    - wget -O- https://toolbelt.heroku.com/apt/release.key | apt-key add -
+#    - apt-get update
+#    - apt-get install -y -qq nodejs build-essential heroku-toolbelt
+#    - gem install dpl
+#    - dpl --provider=heroku --app=staging-masonicmanagement --api-key=$HEROKU_STAGING_API_KEY
+#    - heroku run rake db:migrate db:seed --exit-code --app staging-masonicmanagement
+#  only:
+#    - develop

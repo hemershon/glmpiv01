@@ -33,6 +33,7 @@ group :development do
   gem 'binding_of_caller', '~> 1.0'
   gem 'faker', '~> 2.19'
   gem 'brakeman', '~> 5.2'
+  gem 'pry', '~> 0.14.1'
 end
 
 group :test do
