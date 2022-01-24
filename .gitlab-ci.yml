@@ -2,6 +2,7 @@ image: ruby:3.1.0
 
 stages:
   - build
+  - image
 #  - test
   - staging
 #  - production
@@ -19,6 +20,7 @@ build:
     - docker pull $BUILDER_IMAGE_TAG || echo "No pre-built image found."
     - docker build --cache-from $BUILDER_IMAGE_TAG -t $BUILDER_IMAGE_TAG -f Dockerfile . || docker build -t $BUILDER_IMAGE_TAG -f Dockerfile . 
     - docker push $BUILDER_IMAGE_TAG
+
 
 #staging:
 #  stage: staging

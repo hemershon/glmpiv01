@@ -37,6 +37,11 @@ RUN bundle check || bundle install
 
 COPY package.json yarn.lock /app/
 RUN yarn install --check-files
+
+ENV NODE_ENV production
+ENV RAILS_ENV production
+ENV RAILS_LOG_TO_STDOUT true
+
 COPY . /app/
 
 EXPOSE 3000
