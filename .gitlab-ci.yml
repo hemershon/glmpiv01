@@ -3,7 +3,7 @@ image: ruby:3.1.0-alpine
 stages:
   - build
 #  - test
-#  - staging
+  - staging
 #  - production
 
 build:
