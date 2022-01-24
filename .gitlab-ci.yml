@@ -12,13 +12,14 @@ build:
   services:
     - docker:dind
   variables:
-    BUILDER_IMAGE_TAG: $CI_REGISTRY_IMAGE:latest
+    # IMAGE_TAG: $CI_REGISTRY_IMAGE:latest
+    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   script:
-    - docker pull $BUILDER_IMAGE_TAG || echo "No pre-built image found."
-    - docker build --cache-from $BUILDER_IMAGE_TAG -t $BUILDER_IMAGE_TAG -f Dockerfile . || docker build -t $BUILDER_IMAGE_TAG -f Dockerfile . 
-    - docker push $BUILDER_IMAGE_TAG
+    - docker pull $IMAGE_TAG || echo "No pre-built image found."
+    - docker build --cache-from $IMAGE_TAG -t $IMAGE_TAG -f Dockerfile . || docker build -t $IMAGE_TAG -f Dockerfile . 
+    - docker push $IMAGE_TAG
 
 
 #staging:
