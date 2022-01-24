@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/bin/zsh
 sudo usermod -aG docker $USER
 docker-compose down
@@ -5,6 +6,16 @@ docker image rm $(docker image ls -aqf)
 docker container rm $(docker container ls -aqf)
 docker volume rm $(docker volume ls -qf)
 docker network rm $(docker network ls -qf)
+=======
+#!/bin/sh
+sudo usermod -aG docker $USER
+docker-compose down
+docker container stop $(docker container ls -aq)
+docker container rm $(docker container ls -aq)
+docker image rm $(docker image ls -aq)
+docker volume rm $(docker volume ls -q)
+docker network rm $(docker network ls -q)
+>>>>>>> feature/containers
 sudo chown -R $USER:$USER postgres
 sudo chown -R $USER:$USER masonicmanagement
 sudo chown -R root:root config/puma.rb
