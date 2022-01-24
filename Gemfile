@@ -20,6 +20,7 @@ gem 'kaminari', '~> 1.2', '>= 1.2.2'
 gem 'groupdate', '~> 6.0', '>= 6.0.1'
 gem 'net-smtp', '~> 0.3.1'
 gem 'net-pop', '~> 0.1.1'
+gem 'net-imap', '~> 0.2.3'
 
 group :development, :test do
   gem 'byebug', '~> 11.1', '>= 11.1.3', platforms: [:mri, :mingw, :x64_mingw]
