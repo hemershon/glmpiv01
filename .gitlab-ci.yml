@@ -6,17 +6,19 @@ stages:
   - staging
 #  - production
 
-build:
+construct_builder:
   stage: build
+  image: docker:stable
+  services:
+    - docker:dind
+  variables:
+    BUILDER_IMAGE_TAG: $CI_REGISTRY_IMAGE/builder:latest
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   script:
-    - gem install bundler -v 2.3.3 --no-document
-    - bundle install --jobs $(nproc) "${FLAGS[@]}"
-  artifacts:
-    name: "$CI_JOB_STAGE-$CI_COMMIT_REF_NAME"
-    when: always
-    expire_in: 2h30min
-    paths:
-      - ./
+    - docker pull $BUILDER_IMAGE_TAG || echo "No pre-built image found."
+    - docker build --cache-from $BUILDER_IMAGE_TAG -t $BUILDER_IMAGE_TAG -f Dockerfile . || docker build -t $BUILDER_IMAGE_TAG -f Dockerfile . 
+    - docker push $BUILDER_IMAGE_TAG
 
 #staging:
 #  stage: staging
