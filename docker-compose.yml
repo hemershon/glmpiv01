@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.7'
 
 services:
   db:
@@ -16,10 +16,11 @@ services:
 #    ports:
 #      - 6379:6379
 
-  app: 
-    build:
-      context: .
-      dockerfile: Dockerfile
+  app:
+    image: registry.gitlab.com/trixsystems/trxmasonic/masonicmanagement
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     depends_on:     
       - db
       # - redis
@@ -29,9 +30,11 @@ services:
       - .:/app
       - gem_cache:/usr/local/bundle/gems
       - node_modules:/app/node_modules
-    env_file: .env
+    # env_file: .env
     environment:
-      RAILS_ENV: development
+      SECRET_KEY_BASE: ./config/credentials.yml.enc
+      # vjXUojVrhp1PUW0bibiVaMjo47kPfR19Ysh+h3uQiFlA7TaKRz0JRbtpOSIvlEjgDYKzwWdeaFOwwoytqD+H+Uz2jl0EHZETXYShLC4EGj/ulxxzx1PL7gQXoYmh7ehv0tYOq+PBqk02YBf/n8rdYkjUJ3pR2aZnKQSkl8XLZ9F7AKt5aaAUm1lYZGY46uHf1CPadcCCC16MZG00ASb2JG0wlP633x/XOTL2EqoU0piXlgBg3B/0YgRIAHARvffb7Nd03DvPlc61cUY554VbEzEBFK2+ws4zdungxBHmIZaxaPBkLjUIz2dwz8NHzq8hKQnJwm1R+6dSqgeOayqna4bWcILO1RCLx3xpM3ZlD/vzD3k84fCf2QbJUlbh8WOVK7SNy+EqAc2rcSAZ3pz0S80MvkC7ZcM6iper--rCZEyBRmVGeahwWc--U+7XJgNMEBxRJU8UnUu1cA==
+      # RAILS_ENV: development
 
 #  sidekiq:
 #    build:

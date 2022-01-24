@@ -18,6 +18,7 @@ gem 'simple_form', '~> 5.1'
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
 gem 'groupdate', '~> 6.0', '>= 6.0.1'
+gem 'net-smtp', '~> 0.3.1', require: false
 
 group :development, :test do
   gem 'byebug', '~> 11.1', '>= 11.1.3', platforms: [:mri, :mingw, :x64_mingw]

@@ -32,8 +32,10 @@ WORKDIR /app
 RUN $USER:$USER /app
 COPY Gemfile Gemfile.lock /app/
 
-RUN bundle config build.nokogiri --use-system-libraries
-RUN bundle check || bundle install
+# RUN bundle config build.nokogiri --use-system-libraries
+RUN bundle update --bundler
+RUN bundle check || bundle install --jobs $(nproc) --retry 3 --without development test \
+      && rm -rf /usr/local/bundle/bundler/gems/*/.git /usr/local/bundle/cache/
 
 COPY package.json yarn.lock /app/
 RUN yarn install --check-files
