@@ -14,8 +14,4 @@ test:
   database: masonicmanagement_test
 production:
   <<: *default
-<<<<<<< HEAD
   database: masonicmanagement_production
-=======
-  database: masonicmanagement_production
->>>>>>> feature/containers
