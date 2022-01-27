@@ -22,3 +22,9 @@ docker-compose run app rails db:seed
 
 ## Rodar o build
 sudo chmod -R 777 postgres
+
+## Rails console
+docker-compose exec app pry 
+
+## desinstalar todas as gems
+for i in `gem list --no-versions`; do gem uninstall -aIx $i; done
