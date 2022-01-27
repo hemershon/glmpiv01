@@ -42,7 +42,6 @@ group :development do
   gem 'faker', '~> 2.19'
   gem 'brakeman', '~> 5.2'
   gem 'pry', '~> 0.14.1'
-  gem 'better_errors'
   gem 'binding_of_caller'
   gem 'faker'
   gem 'brakeman'
