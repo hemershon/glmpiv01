@@ -17,7 +17,6 @@ gem 'rails-i18n', '~> 7.0', '>= 7.0.1'
 gem 'simple_form', '~> 5.1'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
 gem 'groupdate', '~> 6.0', '>= 6.0.1'
-<<<<<<< Gemfile
 gem 'net-smtp', '~> 0.3.1'
 gem 'net-pop', '~> 0.1.1'
 gem 'net-imap', '~> 0.2.3'
