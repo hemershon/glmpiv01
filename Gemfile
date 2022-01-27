@@ -21,7 +21,7 @@ gem 'net-smtp', '~> 0.3.1'
 gem 'net-pop', '~> 0.1.1'
 gem 'net-imap', '~> 0.2.3'
 gem 'nokogiri', '~> 1.13', '>= 1.13.1'
-gem 'geokit'
+gem 'geokit', '~> 1.13', '>= 1.13.1'
 gem 'bootstrap', '~> 5.1.3'
 
 group :development, :test do
