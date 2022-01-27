@@ -11,19 +11,10 @@ services:
     ports:
       - 5432:5432
 
-#  redis:
-#    image: redis:5.0.9
-#    ports:
-#      - 6379:6379
-
   app:
-    image: registry.gitlab.com/trixsystems/trxmasonic/masonicmanagement
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
+    image: registry.gitlab.com/trixsystems/trxmasonic/masonicmanagement:develop
     depends_on:     
       - db
-      # - redis
     ports: 
       - 3000:3000
     volumes:
