@@ -20,7 +20,7 @@ gem 'groupdate', '~> 6.0', '>= 6.0.1'
 gem 'net-smtp', '~> 0.3.1'
 gem 'net-pop', '~> 0.1.1'
 gem 'net-imap', '~> 0.2.3'
-gem 'nokogiri'
+gem 'nokogiri', '~> 1.13', '>= 1.13.1'
 gem 'geokit'
 gem 'bootstrap', '~> 5.1.3'
 
@@ -42,10 +42,7 @@ group :development do
   gem 'faker', '~> 2.19'
   gem 'brakeman', '~> 5.2'
   gem 'pry', '~> 0.14.1'
-  gem 'binding_of_caller'
-  gem 'faker'
-  gem 'brakeman'
-  gem "annotate"
+  gem 'annotate', '~> 3.1', '>= 3.1.1'
 end
 
 group :test do
