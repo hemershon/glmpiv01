@@ -11,7 +11,6 @@ gem 'webpacker', '~> 5.4', '>= 5.4.3'
 gem 'turbolinks', '~> 5.2', '>= 5.2.1'
 gem 'jbuilder', '~> 2.11', '>= 2.11.5'
 gem 'bootsnap', '~> 1.10', '>= 1.10.3', require: false
-gem 'i18n', '~> 1.9', '>= 1.9.1'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'devise-i18n', '~> 1.10', '>= 1.10.1'
 gem 'rails-i18n', '~> 7.0', '>= 7.0.1'
