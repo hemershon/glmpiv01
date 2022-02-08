@@ -28,3 +28,7 @@ docker-compose exec app pry
 
 ## desinstalar todas as gems
 for i in `gem list --no-versions`; do gem uninstall -aIx $i; done
+
+chmod +x entrypoints/docker-entrypoint.sh
+chmod +x entrypoints/sidekiq-entrypoint.sh
+chmod +x init.sql
