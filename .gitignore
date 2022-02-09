@@ -17,6 +17,6 @@
 /app/yarn-error.log
 /appyarn-debug.log*
 /app.yarn-integrity
-/app/.env
-/app/.idea/
+.env
+.idea/
 postgres/
