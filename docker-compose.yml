@@ -1,8 +1,11 @@
+version: '3.7'
+
 services:
   app:
     build:
-      context: .
-      dockerfile: Dockerfile
+     context: .
+     dockerfile: Dockerfile
+    image: registry.gitlab.com/trixsystems/trxmasonic/masonicmanagement:develop
     depends_on:     
       - database
       - redis
