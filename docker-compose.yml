@@ -1,51 +1,26 @@
 version: '3.7'
 
 services:
-  app:
-    build:
-     context: .
-     dockerfile: Dockerfile
-    image: registry.gitlab.com/trixsystems/trxmasonic/masonicmanagement:develop
-    depends_on:     
-      - database
-      - redis
+  web:
+    image: nginx
     ports:
-      - "3000:3000"
-    volumes:
-      - .:/app
-      - gem_cache:/usr/local/bundle/gems
-      - node_modules:/app/node_modules
-    env_file: .env
+      - 80:80
+
+  db:
+    image: postgres
+    restart: always
     environment:
-      RAILS_ENV: development
-
-  database:
-    image: postgres:12.1
+      POSTGRES_PASSWORD: masonicmanagement
     volumes:
-      - db_data:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-
-  redis:
-    image: redis:5.0.7
-
-  sidekiq:
-    build:
-      context: .
-      dockerfile: Dockerfile
+      - ./postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    
+  app:
+    build: .
+    volumes:
+      - ./app:/app
+    ports:
+      - 3000:3000
     depends_on:
-      - app      
-      - database
-      - redis
-    volumes:
-      - .:/app
-      - gem_cache:/usr/local/bundle/gems
-      - node_modules:/app/node_modules
-    env_file: .env
-    environment:
-      RAILS_ENV: development
-    entrypoint: ./entrypoints/sidekiq-entrypoint.sh
-
-volumes:
-  gem_cache:
-  db_data:
-  node_modules:
+      - db

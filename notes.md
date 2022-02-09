@@ -17,6 +17,9 @@ docker-compose exec app rails db:create
 ## Fazer Migracao
 docker-compose exec app rails db:migrate
 
+## Webpacker Install
+docker-compose run app rails webpacker:install
+
 ## Criando os seeds
 docker-compose run app rails db:seed
 

@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: masonicmanagement
+  pool: 5
+
+development:
+  <<: *default
+  database: masonicmanagement_development
+test:
+  <<: *default
+  database: masonicmanagement_test
+production:
+  <<: *default
+  database: masonicmanagement_production
