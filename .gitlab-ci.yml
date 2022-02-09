@@ -1,0 +1,39 @@
+image: ruby:3.1.0
+
+stages:
+  - build
+#  - test
+  - staging
+#  - production
+
+build:
+  stage: build
+  image: docker:stable
+  services:
+    - docker:dind
+  variables:
+    # IMAGE_TAG: $CI_REGISTRY_IMAGE:latest
+    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    # IMAGE_TAG: $CI_REGISTRY_IMAGE:(date +'%d%m%Y')
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - docker pull $IMAGE_TAG || echo "No pre-built image found."
+    - docker build --cache-from $IMAGE_TAG -t $IMAGE_TAG -f Dockerfile . || docker build -t $IMAGE_TAG -f Dockerfile . 
+    - docker push $IMAGE_TAG
+
+
+#staging:
+#  stage: staging
+#  variables:
+#    HEROKU_API_KEY: $HEROKU_STAGING_API_KEY
+#  script:
+#    - echo "deb http://toolbelt.heroku.com/ubuntu ./" > /etc/apt/sources.list.d/heroku.list
+#    - wget -O- https://toolbelt.heroku.com/apt/release.key | apt-key add -
+#    - apt-get update
+#    - apt-get install -y -qq nodejs build-essential heroku-toolbelt
+#    - gem install dpl
+#    - dpl --provider=heroku --app=staging-masonicmanagement --api-key=$HEROKU_STAGING_API_KEY
+#    - heroku run rake db:migrate db:seed --exit-code --app staging-masonicmanagement
+#  only:
+#    - develop
