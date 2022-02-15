@@ -22,16 +22,32 @@
   </div>
   
   <div class="social-links d-none d-md-block">
-    <a href="https://www.facebook.com/Grande-Loja-Ma%C3%A7%C3%B4nica-do-Piau%C3%AD-107478261032670/?modal=admin_todo_tour" class="facebook"><i class="bi bi-facebook"></i></a>
-    <a href="https://www.instagram.com/glmpi_/?hl=en" class="instagram"><i class="bi bi-instagram"></i></a>
-    <a href="https://api.whatsapp.com/send?phone=5586981465579&text=oi" class="whatsapp"><i class="bi bi-whatsapp"></i></i></a>
-    <a href="https://www.youtube.com/channel/UC6W_rIUm_CjLUOLIH37C3Ag" class="Youtube"><i class="bi bi-youtube"></i></a>
-    <a href="http://www.radios.com.br/play/154549" class="Radio"><i class="bi bi-broadcast"></i></a>
-    <a href="https://mailpro.uol.com.br/glmpi.org.br" class="Email">E-mail </a>
-    <a href="" class="login">Login</a>
+  <%= link_to "https://api.whatsapp.com/send?phone=5586981465579&text=oi", class: "btn btn-default" do %>	     
+    <ion-icon name="logo-whatsapp"></ion-icon>
+  <% end %>	   
+  <%= link_to "https://www.youtube.com/channel/UC6W_rIUm_CjLUOLIH37C3Ag", class: "btn btn-default" do %>	 
+    <ion-icon name="logo-youtube"></ion-icon>	    
+  <% end %>	            
+  <%= link_to "https://www.instagram.com/glmpi_/?hl=en", class: "btn btn-default" do %>	  
+    <ion-icon name="logo-instagram"></ion-icon>
+  <% end %>
+  <%= link_to "https://www.facebook.com/Grande-Loja-Ma%C3%A7%C3%B4nica-do-Piau%C3%AD-107478261032670/?modal=admin_todo_tour", class: "btn btn-default" do %>	    
+    <ion-icon name="logo-facebook"></ion-icon>
+  <% end %>
+  <%= link_to "", class: "btn btn-default" do %>	        
+    <ion-icon name="tv-outline"></ion-icon>	      
+  <% end %>	      
+  <%= link_to "http://www.radios.com.br/play/154549", class: "btn btn-default" do %>	    
+    <ion-icon name="radio-outline"></ion-icon>
+  <% end %>
+  <%= link_to "comunicacao@glmpi.org.br", class: "btn btn-default" do %>	    
+  <ion-icon name="mail-outline">
+  <% end %>
+  <%= link_to "Email", "https://mailpro.uol.com.br/glmpi.org.br" , class: "btn btn-default", style: "button" %> 
+    <%= link_to "Login", backoffice_dashboard_index_path, class: "btn btn-default", style: "button" %> 
+
   </div>      
 </section>
-
         <!-- ======= Header ======= -->
         <header id="header" class="d-flex align-items-center">
           <div class="container d-flex align-items-center">
