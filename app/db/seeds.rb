@@ -67,7 +67,7 @@ Admin.create! email:"loja47@glmpi.org.br", password: 123456789, created_at: "202
 Admin.create! email:"loja48@glmpi.org.br", password: 123456789, created_at: "2020-12-07 07:07:59", updated_at: "2020-12-07 07:07:59"
 Admin.create! email:"loja49@glmpi.org.br", password: 123456789, created_at: "2020-12-07 07:07:59", updated_at: "2020-12-07 07:07:59"
 Admin.create! email:"loja50@glmpi.org.br", password: 123456789, created_at: "2020-12-07 07:07:59", updated_at: "2020-12-07 07:07:59"
-
+Balancesheet.create! number: "1", date: "2022-12-07 07:07:59", resume: "12sfasdfasdfasdfasdfasdfasd", balancheetpdf: "testando", created_at: "2020-12-07 07:07:59", updated_at: "2020-12-07 07:07:59"
 
 
 
