@@ -421,6 +421,7 @@ DEPENDENCIES
   font-awesome-rails
   geokit (~> 1.13, >= 1.13.1)
   groupdate (~> 6.0, >= 6.0.1)
+  image_processing
   jbuilder (~> 2.11, >= 2.11.5)
   kaminari (~> 1.2, >= 1.2.2)
   listen

@@ -1,0 +1,32 @@
+  <section id="portfolio" class="portfolio section-bg">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+     </br></br>
+      <figure class="image is-3by1">
+        <%= image_tag @site_news.featured_image %>
+      </figure></br>
+      <div class="columns">
+        <div class="column">
+          <p class="title"><%= @site_news.title %></p>
+        </div>
+      </div></br></br>
+      <div class="columns">
+        <div class="column is-three-quarters"><%= @site_news.content %>
+        </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+          <div class="portfolio-info">
+            <h4>Web 3</h4>
+            <p>Web</p>
+            <div class="portfolio-links">
+              <a href="assets/img/portfolio/portfolio-2.jpg" data-galleryery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
+              <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    <%= link_to 'Voltar', site_news_index_path, class: 'button is-link is-light' %>
+  </div>
+</section>

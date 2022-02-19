@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="navbar-brand">
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" >
+          <a class="button is-link"href='/site/news/new'>
+            <strong>+ Nova Pucbliccação</strong>
+          </a>
+        </a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <% unless admin_signed_in? %>
+<!--              <a class="button is-primary" href='/admin/sign_up'>-->
+<!--                <strong>Cadastre-se</strong>-->
+<!--              </a>-->
+<!--              <a class="button is-light" href='/admin/sign_in'>-->
+<!--                Entrar-->
+<!--              </a>-->
+            <% end %>
+            <% if admin_signed_in? %>
+              <%= link_to "Sair", destroy_admin_session_path, method: :delete, class: 'button is-light'  %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<section id="portfolio" class="portfolio section-bg">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row portfolio-container">
+      <% @site_news.each do |site_news| %>
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <figure class="image is-square">
+            <%= image_tag site_news.featured_image, class: "image is-3by1" %>
+          </figure>
+
+          <div class="portfolio-info">
+            <h4><a href="<%= site_news_path(id: site_news.id) %>"><p class="title is-4"><%= site_news.author %></p></a></h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
