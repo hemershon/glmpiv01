@@ -11,5 +11,5 @@
 #  updated_at    :datetime         not null
 #
 class Balancesheet < ApplicationRecord
-  # mount_uploader :balancesheetspdf, BalancesheetspdfUploader
+  mount_uploader :balancheetpdf, BalancheetpdfUploader
 end
