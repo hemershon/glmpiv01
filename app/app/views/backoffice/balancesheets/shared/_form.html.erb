@@ -1,45 +1,65 @@
-<div class="container-fluid">
-
-  <h1 class="h3 mb-2 text-gray-800">Balancetes</h1>
-  <% if @balancesheet.errors.any? %>
-    <div class="alert alert-danger alert-dismissable">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-    <ul>
-     <% @balancesheet.errors.full_messages.each do |message| %>
-     <li><%= message %></li>
-    <% end %>
-    </ul>
-    </div>
-    <% end %>
-    <p class="mb-4">Balancetes da Grande Loja Maçônica do Piauí.</p>
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary"><%= action %>
-          <%= link_to backoffice_balancesheets_path, class:"btn btn-success btn-circle btn-sm", style:"margin-top: -5px" do %>
-            <i class="fas fa-plus"></i>
-            <% end %>
-          </h6>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive"></div>
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <div class="col-lg-12">
-                  <%= simple_form_for([:backoffice, @balancesheet]) do |f| %>
-                    <%= f.error_notification %>
-                    <div class="form-inputs">
-                      <%= f.input :number, value:"Número" %>
-                      <%= f.input :date %>
-                      <%= f.input :resume %>
-                      <%= f.label 'Enviar' %>
-                      <%= f.file_field :balancheetpdf%>
-                    </div>
-                    <div class="form-actions">
-                      <%= f.button :submit, class:"btn btn-primary", value:"salvar" %>
-                    </div>
-                  <% end %>
+<body class="nav-fixed">
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+    <main>
+      <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+         <div class="container-xl px-4">
+          <div class="page-header-content pt-4">
+            <div class="row align-items-center justify-content-between">
+            <div class="col-auto mt-4">
+              <h1 class="page-header-title">
+                <div class="page-header-icon">
+                  <svg xmlns="" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
                 </div>
-              </table>
+                Grande Tesouraria
+              </h1>
+              <div class="page-header-subtitle">Área destinada para o Cadastro de Balancetes</div>
+            </div>
+            </div>
+          </div>
+         </div>
+      </header>
+       <div class="container-xl px-4 mt-n10">
+        <div class="card">
+          <div class="card-header border-bottom">
+            <div class="card-body">
+              <div class="tab-content" id="cardTabContent">
+                <div class="tab-pane py-5 py-xl-10 fade show active" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
+                  <div class="row justify-content-center">
+                     <div class="justify-content-center">
+                      <h3 class="text-primary">Painel de Cadastro</h3>
+                      <h5 class="card-title mb-4">Informe os dados do Balencetes</h5> 
+                     </div>
+                     <%= simple_form_for([:backoffice, @balancesheet]) do |f| %>
+                     <%= f.error_notification %>
+                     <div class="row gx-3">
+                        <div class="mb-3 col-md-6">                                                            
+                          <%= f.input :number, label:"Número do Balancete", input_html: { class: "form-control" } %>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                          <%= f.input :date, label:"Data do cadastro", html5: true, input_html: { class: "form-control" } %>
+                        </div>
+                    </div>
+                    <div class="row gx-3">
+                      <div class="mb-3 col-md-6">
+                        <%= f.input :resume, as: :text, label:"Resumo", input_html: { class: "form-control" } %>
+                      </div>
+                      </b></b></b></b>
+                      <div class="mb-3 col-md-6">
+                        <%= f.file_field :balancheetpdf %>
+                      </div>
+                      <%= f.button :submit, "Cadastrar", class: "btn btn-primary d-grid gap-2 col-2 mx-auto" %>
+                    </div>
+                     <% end %>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+       </div>
+    </main>
+    </div>
+  </div>
+</body>
