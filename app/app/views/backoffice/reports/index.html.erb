@@ -10,9 +10,9 @@
                 <div class="col-auto mt-4">
                   <h1 class="page-header-title">
                     <div class="page-header-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg></div>
-                    Grande Tesouraria
+                    Grande Secretaria
                   </h1>
-                  <div class="page-header-subtitle">Demostrativos mensais do financeiro da Grande Loja Maçônica do Piauí</div>
+                  <div class="page-header-subtitle">Demostrativos de Boletins da Grande Loja Maçônica do Piauí</div>
                 </div>
               </div>
             </div>
@@ -27,8 +27,8 @@
                     <div class="row justify-content-center">
                       <div class="col-xxl-10 col-xl-10">
                         <h2 class="text-primary">Painel de Informativo Mensal</h2>
-                        <h5 class="card-title mb-4">Informe os dados do Balencetes</h5> 
-                        <%= link_to "Cadastrar balancete", new_backoffice_balancesheet_path, class:"btn btn-outline-primary"%>
+                        <h5 class="card-title mb-4"></h5> 
+                        <%= link_to "Cadastrar Boletim", new_backoffice_report_path, class:"btn btn-outline-primary"%>
                         <div class="card-body">
                           <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
                             <div class="dataTable-top">
@@ -43,14 +43,14 @@
                                     <th data-sortable="" style="width: 11.8799%;"><a href="#" class="dataTable-sorter">Ação</a></th>
                                   </tr>
                                 </thead>
-                                <% @balancesheets.each do |balancesheet| %>
+                                <% @reports.each do |report| %>
                                   <tbody>
                                     <tr>
-                                      <td><%= balancesheet.id %></td>
-                                      <td><%= balancesheet.number %></td>
-                                      <td><%= balancesheet.date %></td>
-                                      <td><%= balancesheet.resume %></td>
-                                      <td><%= link_to("Balancete", balancesheet.balancheetpdf_url, target: '_blank' ) %></td>
+                                      <td><%= report.id %></td>
+                                      <td><%= report.number %></td>
+                                      <td><%= report.date %></td>
+                                      <td><%= report.resume %></td>
+                                      <td><%= link_to("Boletim", report.reportpdf_url, target: '_blank' ) %></td>
                                       <td><button class="btn btn-datatable btn-icon btn-transparent-dark me-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
                                       <circle cx="12" cy="12" r="1"></circle></svg>
                                       </button>
@@ -65,7 +65,7 @@
                                 <% end %>
                                     </tbody>
                                     </table>
-                                    <%= paginate @balancesheets %>
+                                    <%= paginate @reports %>
                                 </div
                             </div>
                             </div>
