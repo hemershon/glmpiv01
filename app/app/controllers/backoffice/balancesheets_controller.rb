@@ -1,5 +1,5 @@
 class Backoffice::BalancesheetsController < BackofficeController
-  before_action :set_report, only: [:edit, :update]
+  before_action :set_balancesheet, only: [:edit, :update]
 
   def index
     @balancesheets = Balancesheet.all 
