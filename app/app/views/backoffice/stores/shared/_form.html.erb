@@ -1,0 +1,112 @@
+<body class="nav-fixed">
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+    <main>
+      <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+         <div class="container-xl px-4">
+          <div class="page-header-content pt-4">
+            <div class="row align-items-center justify-content-between">
+            <div class="col-auto mt-4">
+              <h1 class="page-header-title">
+                <div class="page-header-icon">
+                  <svg xmlns="" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                </div>
+                Loja
+              </h1>
+              <div class="page-header-subtitle">Área destinada para o Cadastro de Boletins</div>
+            </div>
+            </div>
+          </div>
+         </div>
+      </header>
+       <div class="container-xl px-4 mt-n10">
+        <div class="card">
+          <div class="card-header border-bottom">
+            <div class="card-body">
+              <div class="tab-content" id="cardTabContent">
+                <div class="tab-pane py-5 py-xl-10 fade show active" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
+                  <div class="row justify-content-center">
+                     <div class="justify-content-center">
+                      <h3 class="text-primary">Painel de Cadastro</h3>
+                      <h5 class="card-title mb-4">Informe os dados da Loja</h5> 
+                     </div>
+                     <%= simple_form_for([:backoffice, @store]) do |f| %>
+                     <%= f.error_notification %>
+                     <div class="row gx-3">
+                        <div class="mb-3 col-md-6">                                                            
+                          <%= f.input :name, label:"Nome da Loja", input_html: { class: "form-control" } %>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                          <%= f.input :numberstore, label:"Número da Loja", html5: true, input_html: { class: "form-control" } %>
+                        </div>
+                    </div>
+                    <div class="row gx-3">
+                        <div class="mb-3 col-md-6">                                                            
+                          <%= f.input :address, label:"Endereço", input_html: { class: "form-control" } %>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                          <%= f.input :neighborhood, label:"Bairro", html5: true, input_html: { class: "form-control" } %>
+                        </div>
+                    </div>
+                    <div class="row gx-3">
+                        <div class="mb-3 col-md-6">                                                            
+                          <%= f.input :zipcode, label:"Cep", input_html: { class: "form-control" } %>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                          <%= f.input :foundationdate, label:"Data da Fundação", html5: true, input_html: { class: "form-control" } %>
+                        </div>
+                    </div>
+                    <div class="row gx-3">
+                        <div class="mb-3 col-md-6">                                                            
+                          <%= f.input :rite, label:"Rito", input_html: { class: "form-control" } %>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                          <%= f.input :decreecreatingthestore, label:"Decreto de fundação", html5: true, input_html: { class: "form-control" } %>
+                        </div>
+                    </div>
+                    <div class="row gx-3">
+                        <div class="mb-3 col-md-6">                                                            
+                          <%= f.input :potency, label:"Potência", input_html: { class: "form-control" } %>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                          <%= f.input :venerable, label:"Venerável", html5: true, input_html: { class: "form-control" } %>
+                        </div>
+                    </div>
+                    <div class="row gx-3">
+                        <div class="mb-3 col-md-6">                                                            
+                          <%= f.input :email, label:"E-mail", input_html: { class: "form-control" } %>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                          <%= f.input :phone, label:"Telefone", html5: true, input_html: { class: "form-control" } %>
+                        </div>
+                    </div>
+                     <div class="row gx-3">
+                        <div class="mb-3 col-md-6">                                                            
+                          <%= f.input :meeting, label:"Reniões", input_html: { class: "form-control" } %>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                          <%= f.file_field :coatofarms, label:"Brasão da Loja", html5: true, input_html: { class: "form-control" } %>
+                        </div>
+                    </div>
+                   
+                      </b></b></b></b>
+                       </b></b></b></b>
+                      <div class="mb-3 col-md-12 justify-content-center">
+                      <h5 class="text-primary justify-content-center">História da Loja</h5> 
+                        <%= f.rich_text_area :note, as: :text, label:"História", input_html: { class: "form-control" } %>
+                      </div>
+                      <%= f.button :submit, "Cadastrar", class: "btn btn-primary d-grid gap-2 col-2 mx-auto" %>
+                    </div>
+                     <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
+    </main>
+    </div>
+  </div>
+</body>

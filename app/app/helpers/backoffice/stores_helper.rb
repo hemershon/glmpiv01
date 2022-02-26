@@ -1,0 +1,2 @@
+module Backoffice::StoresHelper
+end
