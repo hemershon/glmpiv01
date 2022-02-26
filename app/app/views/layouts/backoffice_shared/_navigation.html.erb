@@ -159,9 +159,11 @@
                         <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                         Account
                     </a>
-                    <a class="dropdown-item" href="#!">
+                    <a class="dropdown-item" href="">
                         <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
-                        Logout
+                       <%= link_to destroy_admin_session_path, method: :delete do %>
+                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"> </i> Sair
+                  <% end %>
                     </a>
                 </div>
             </li>
