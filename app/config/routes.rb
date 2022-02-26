@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   namespace :backoffice do
     resources :balancesheets, except: [:show, :destroy]
     resources :reports, except: [:show, :destroy]
+    resources :stores, except: [:destroy]
     resources :dashboard
-    resources :store
   end
 
   namespace :site do
