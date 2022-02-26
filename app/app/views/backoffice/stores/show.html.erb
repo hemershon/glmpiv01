@@ -10,9 +10,9 @@
                 <div class="col-auto mt-4">
                   <h1 class="page-header-title">
                     <div class="page-header-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg></div>
-                    Grande Secretaria
+                    Lojas Juridicionadas
                   </h1>
-                  <div class="page-header-subtitle">Demostrativos de Boletins da Grande Loja Maçônica do Piauí</div>
+                  <div class="page-header-subtitle">Loja Juridicionada da Grande Loja Maçônica do Piauí</div>
                 </div>
               </div>
             </div>
@@ -26,31 +26,32 @@
                   <div class="tab-pane py-5 py-xl-10 fade show active" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
                     <div class="row justify-content-center">
                       <div class="col-xxl-10 col-xl-10">
-                        <h2 class="text-primary">Painel Informativo Mensal</h2>
+                        <h2 class="text-primary">Painel Informativo</h2>
                         <h5 class="card-title mb-4"></h5> 
-                        <%= link_to "Cadastrar Boletim", new_backoffice_report_path, class:"btn btn-outline-primary"%>
+                        <%= link_to "Cadastrar Loja", new_backoffice_store_path, class:"btn btn-outline-primary"%>
                         <div class="card-body">
                           <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
                             <div class="dataTable-top">
                               <table id="datatablesSimple" class="dataTable-table table-bordered border-primary">
                                 <thead class="table-primary" >
                                   <tr>
-                                    <th data-sortable="" style="width: 15.4439%;"><a href="#" class="dataTable-sorter">ID</a></th>
-                                    <th data-sortable="" style="width: 15.4439%;"><a href="#" class="dataTable-sorter">Número</a></th>
-                                    <th data-sortable="" style="width: 23.1658%;"><a href="#" class="dataTable-sorter">Data</a></th>
-                                    <th data-sortable="" style="width: 12.7709%;"><a href="#" class="dataTable-sorter">Resumo</a></th>
-                                    <th data-sortable="" style="width: 7.49919%;"><a href="#" class="dataTable-sorter">Arquivos</a></th>
+                                    <th data-sortable="" style="width: 1.4439%;"><a href="#" class="dataTable-sorter">ID</a></th>
+                                    <th data-sortable="" style="width: 15.4439%;"><a href="#" class="dataTable-sorter">Loja</a></th>
+                                    <th data-sortable="" style="width: 23.1658%;"><a href="#" class="dataTable-sorter">email</a></th>
+                                    <th data-sortable="" style="width: 12.7709%;"><a href="#" class="dataTable-sorter">Telefone</a></th>
+                                    <th data-sortable="" style="width: 23.1658%;"><a href="#" class="dataTable-sorter">Veneravel</a></th>
                                     <th data-sortable="" style="width: 11.8799%;"><a href="#" class="dataTable-sorter">Ação</a></th>
                                   </tr>
                                 </thead>
-                                <% @reports.each do |report| %>
+                                <% @stores.each do |store| %>
                                   <tbody>
                                     <tr>
-                                      <td><%= report.id %></td>
-                                      <td><%= report.number %></td>
-                                      <td><%= report.date %></td>
-                                      <td><%= report.resume %></td>
-                                      <td><%= link_to("Boletim", report.reportpdf_url, target: '_blank' ) %></td>
+                                      <td><%= store.id %></td>
+                                      <td><%= store.name %></td>
+                                      <td><%= store.email %></td>
+                                      <td><%= store.phone %></td>
+                                      <td><%= store.venerable %></td>
+                                      
                                       <td><button class="btn btn-datatable btn-icon btn-transparent-dark me-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
                                       <circle cx="12" cy="12" r="1"></circle></svg>
                                       </button>
@@ -65,7 +66,7 @@
                                 <% end %>
                                     </tbody>
                                     </table>
-                                    <%= paginate @reports %>
+                                    <%= paginate @stores%>
                                 </div
                             </div>
                             </div>

@@ -1,3 +1,6 @@
+# == Route Map
+#
+
 Rails.application.routes.draw do
   namespace :site do
     resources :news
@@ -5,6 +8,7 @@ Rails.application.routes.draw do
   namespace :backoffice do
     resources :balancesheets, except: [:show, :destroy]
     resources :reports, except: [:show, :destroy]
+    resources :stores, except: [:destroy]
     get 'dashboard/index'
   end
 
