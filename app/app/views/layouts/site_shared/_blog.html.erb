@@ -1,0 +1,21 @@
+<section id="portfolio" class="portfolio section-bg">
+      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div class="section-title">
+          <h2>Notícias</h2>
+        </div>
+        <div class="card-group">
+          <% @site_news.last(3).each do |site_news| %>
+            <div class="card">
+            <%= image_tag site_news.featured_image, class: "card-img-top" %>
+              <div class="card-body">
+                <h5 class="card-title"><%= site_news.title %></h5>
+                <p class="card-text"><span><p><%= site_news.author[0, 50] %>...</p></span></p>
+                <a href="/site/news/<%= site_news.id %>" class="btn btn-primary">Leia já!</a></p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          <% end %>
+          <b>
+        </div>
+      </div>
+    </section>
