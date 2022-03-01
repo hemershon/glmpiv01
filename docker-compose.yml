@@ -3,6 +3,11 @@ version: '3.7'
 services:
   web:
     image: nginx
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    depends_on:
+      - app
     ports:
       - 80:80
 
@@ -10,7 +15,7 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: masonicmanagement
+      POSTGRES_PASSWORD: masonicmanagement'
     volumes:
       - ./postgres:/var/lib/postgresql/data
     ports:
@@ -20,9 +25,8 @@ services:
     build: .
     volumes:
       - ./app:/app
-    ports:
-      - 3000:3000
     environment:
       - RAILS_ENV=${RAILS_ENV}
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
     depends_on:
       - db
