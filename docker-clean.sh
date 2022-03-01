@@ -1,7 +1,7 @@
 #!/bin/sh
 sudo usermod -aG docker $USER
 docker-compose down
-docker container stop $(docker container ls -aq)
+# docker container stop $(docker container ls -aq)
 docker container rm $(docker container ls -aq)
 docker image rm $(docker image ls -aq)
 docker volume rm $(docker volume ls -q)
