@@ -15,7 +15,7 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: masonicmanagement'
+      POSTGRES_PASSWORD: masonicmanagement
     volumes:
       - ./postgres:/var/lib/postgresql/data
     ports:
