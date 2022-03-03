@@ -1,6 +1,3 @@
-# == Route Map
-#
-
 Rails.application.routes.draw do
   namespace :site do
     resources :news
@@ -19,3 +16,6 @@ Rails.application.routes.draw do
   devise_for :members
   devise_for :admins
 end
+
+# == Route Map
+#
