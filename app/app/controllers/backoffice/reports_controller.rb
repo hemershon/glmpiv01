@@ -2,8 +2,8 @@ class Backoffice::ReportsController < BackofficeController
   before_action :set_report, only: [:edit, :update]
   
   def index
-    @reports = Report.all 
-      
+    @reports = Report.all
+
     @reports = Report.order(:number).page params[:page]
   end
       
@@ -35,6 +35,6 @@ class Backoffice::ReportsController < BackofficeController
   end
   
   def report_params
-    params.require(:report).permit(:number, :date, :resume, :reportpdf)
+    params.require(:report).permit(:number, :date, :resume, :featured_reportpdf)
   end
 end

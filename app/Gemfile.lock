@@ -421,10 +421,11 @@ DEPENDENCIES
   font-awesome-rails
   geokit (~> 1.13, >= 1.13.1)
   groupdate (~> 6.0, >= 6.0.1)
-  image_processing
+  image_processing (>= 1.2)
   jbuilder (~> 2.11, >= 2.11.5)
   kaminari (~> 1.2, >= 1.2.2)
   listen
+  mini_magick
   net-imap (~> 0.2.3)
   net-pop (~> 0.1.1)
   net-smtp (~> 0.3.1)
