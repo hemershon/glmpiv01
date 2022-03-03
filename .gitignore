@@ -9,6 +9,7 @@
 /app/storage/*
 /app!/storage/.keep
 /app/public/assets
+/app/public/uploads
 /app.byebug_history
 /app/config/master.key
 /app/public/packs
