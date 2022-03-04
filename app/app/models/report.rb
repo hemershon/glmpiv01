@@ -11,6 +11,6 @@
 #  updated_at :datetime         not null
 #
 class Report < ApplicationRecord
-    has_one_attached :featured_reportpdf
+  has_one_attached :featured_reportpdf
     #mount_uploader :reportpdf, ReportpdfUploader
 end
