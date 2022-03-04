@@ -22,7 +22,7 @@ class Backoffice::ReportsController < BackofficeController
   
   def update
     if @report.update(report_params)
-      redirect_to backoffice_reports_path, notice: "Boletim (#{@balancesheet.number}) atualizado com sucesso! "
+      redirect_to backoffice_reports_path, notice: "Boletim (#{@report.number}) atualizado com sucesso! "
     else
       render :edit
     end
