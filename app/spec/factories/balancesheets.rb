@@ -2,13 +2,14 @@
 #
 # Table name: balancesheets
 #
-#  id            :bigint           not null, primary key
-#  balancheetpdf :string
-#  date          :date
-#  number        :string
-#  resume        :string
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id              :bigint           not null, primary key
+#  balancesheetpdf :string
+#  balancheetpdf   :string
+#  date            :date
+#  number          :string
+#  resume          :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
 #
 FactoryBot.define do
   factory :balancesheet do
