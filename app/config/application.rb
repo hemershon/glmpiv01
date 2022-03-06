@@ -9,8 +9,9 @@ module Masonicmanagement
 
     config.assets.initialize_on_precompile = false
     config.cache_classes = true
-    config.serve_static_assets = true
+    config.serve_static_assets = false
     config.assets.compile = true
     config.assets.digest = true
+    config.assets.enabled = true
   end
 end

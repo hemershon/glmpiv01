@@ -14,7 +14,7 @@ class Backoffice::ReportsController < BackofficeController
   def create
     @report = Report.new(report_params)
     if @report.save
-      redirect_to backoffice_reports_path, notice: "Boletim (#{@report.number}) cadastrado com sucesso!"
+      redirect_to backoffice_reports_path, notice: "Boletim ( #{@report.number }) cadastrado com sucesso!"
     else
       render :new
     end
@@ -22,7 +22,7 @@ class Backoffice::ReportsController < BackofficeController
   
   def update
     if @report.update(report_params)
-      redirect_to backoffice_reports_path, notice: "Boletim (#{@report.number}) atualizado com sucesso! "
+      redirect_to backoffice_reports_path, notice: "Boletim (#{ @report.number }) atualizado com sucesso! "
     else
       render :edit
     end

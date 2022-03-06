@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :backoffice do
     resources :balancesheets do
       root :to => 'balancesheets#index'
+      #get "/uploads/balancesheet/balancesheetpdf/"
     end
     resources :reports do
       root :to => 'reports#index'

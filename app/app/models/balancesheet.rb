@@ -2,14 +2,16 @@
 #
 # Table name: balancesheets
 #
-#  id            :bigint           not null, primary key
-#  balancheetpdf :string
-#  date          :date
-#  number        :string
-#  resume        :string
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id              :bigint           not null, primary key
+#  balancesheetpdf :string
+#  balancheetpdf   :string
+#  date            :date
+#  number          :string
+#  resume          :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
 #
 class Balancesheet < ApplicationRecord
-  mount_uploader :balancheetpdf, BalancheetpdfUploader
+  has_one_attached :featured_balancesheetpdf
+  #mount_uploader :balancesheetpdf, BalancesheetpdfUploader
 end
