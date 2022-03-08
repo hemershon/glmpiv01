@@ -12,6 +12,6 @@
 #  updated_at      :datetime         not null
 #
 class Balancesheet < ApplicationRecord
-  has_one_attached :featured_balancesheetpdf
-  #mount_uploader :balancesheetpdf, BalancesheetpdfUploader
+  #has_one_attached :featured_balancesheetpdf
+  mount_uploader :balancesheetpdf, BalancesheetpdfUploader
 end
