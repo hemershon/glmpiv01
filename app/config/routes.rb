@@ -3,8 +3,13 @@ Rails.application.routes.draw do
     resources :news
   end
   namespace :backoffice do
-    resources :balancesheets, except: [:show, :destroy]
-    resources :reports, except: [:show, :destroy]
+    resources :balancesheets do
+      root :to => 'balancesheets#index'
+      delete 'balancesheets/:id/' => 'balancesheets#destroy'
+    end
+    resources :reports do
+      root :to => 'reports#index'
+    end
     resources :stores, except: [:destroy]
     resources :dashboard
   end
