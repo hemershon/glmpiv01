@@ -15,7 +15,7 @@ docker-compose exec app rails db:migrate RAILS_ENV=production
 
 ## Webpacker Install
 docker-compose run app rails webpacker:install RAILS_ENV=production
-docker-compose run app yarn install --check-files
+docker-compose run app bundle exec rails assets:precompile
 
 ## Criando os seeds
 docker-compose run app rails db:seed RAILS_ENV=production
