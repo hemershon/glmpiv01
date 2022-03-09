@@ -50,6 +50,6 @@ class Backoffice::BalancesheetsController < BackofficeController
   end
 
   def balancesheet_params
-    params.require(:balancesheet).permit(:number, :date, :resume, :balancesheetpdf)
+    params.require(:balancesheet).permit(:number, :date, :resume, :featured_balancesheetpdf)
   end
 end
