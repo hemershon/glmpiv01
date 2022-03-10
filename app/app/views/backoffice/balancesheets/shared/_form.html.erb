@@ -29,12 +29,12 @@
                   <div class="row justify-content-center">
                      <div class="justify-content-center">
                       <h3 class="text-primary">Painel de Cadastro</h3>
-                      <h5 class="card-title mb-4">Informe os dados do Balencetes</h5> 
+                      <h5 class="card-title mb-4">Informe os dados do Balencetes</h5>
                      </div>
                      <%= simple_form_for([:backoffice, @balancesheet]) do |f| %>
                      <%= f.error_notification %>
                      <div class="row gx-3">
-                        <div class="mb-3 col-md-6">                                                            
+                        <div class="mb-3 col-md-6">
                           <%= f.input :number, label:"Número do Balancete", input_html: { class: "form-control" } %>
                         </div>
                         <div class="mb-3 col-md-6">
