@@ -8,17 +8,17 @@ cp .env_example .env
 docker-compose up -d
 
 ## Criar Banco de Dados
-docker-compose exec app rails db:create RAILS_ENV=production
+docker-compose exec app rails db:create
 
 ## Fazer Migracao
-docker-compose exec app rails db:migrate RAILS_ENV=production
+docker-compose exec app rails db:migrate
 
 ## Webpacker Install
-docker-compose run app rails webpacker:install RAILS_ENV=production
+docker-compose run app rails webpacker:install
 docker-compose run app bundle exec rails assets:precompile
 
 ## Criando os seeds
-docker-compose run app rails db:seed RAILS_ENV=production
+docker-compose run app rails db:seed
 
 ## Rodar o build
 sudo chmod -R 777 postgres
@@ -28,6 +28,5 @@ docker-compose exec app pry
 
 ## desinstalar todas as gems
 for i in `gem list --no-versions`; do gem uninstall -aIx $i; done
-
 
 docker-compose exec app rails credentials:edit RAILS_ENV=production
