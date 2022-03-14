@@ -2,7 +2,7 @@ class Backoffice::BalancesheetsController < BackofficeController
   before_action :set_balancesheet, only: [:edit, :update, :show, :destroy]
 
   def index
-    @balancesheets = Balancesheet.all
+    @balancesheets = Balancesheet.order(date: :asc)
     
     @balancesheets = Balancesheet.order(:number).page params[:page]
   end

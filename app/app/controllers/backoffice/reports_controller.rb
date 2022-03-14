@@ -2,7 +2,7 @@ class Backoffice::ReportsController < BackofficeController
   before_action :set_report, only: [:edit, :update]
   
   def index
-    @reports = Report.all
+    @reports = Report.order(date: :asc)
 
     @reports = Report.order(:number).page params[:page]
   end
