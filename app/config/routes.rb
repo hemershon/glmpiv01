@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :reports do
       root :to => 'reports#index'
     end
-    resources :stores, except: [:destroy]
+    resources :stores, only: [:index, :new, :edit, :show]
     resources :dashboard
   end
 

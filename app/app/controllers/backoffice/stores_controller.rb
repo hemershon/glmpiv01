@@ -1,5 +1,5 @@
 class Backoffice::StoresController < BackofficeController
-  before_action :set_store, only: [:edit, :update, :show]
+  before_action :set_store, only: [:destroy]
   
   def index
     @stores = Store.all 
