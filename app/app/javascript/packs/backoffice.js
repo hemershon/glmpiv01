@@ -4,6 +4,10 @@
     * Copyright 2013-2021 Start Bootstrap
     * Licensed under SEE_LICENSE (https://github.com/StartBootstrap/sb-admin-pro/blob/master/LICENSE)
     */
+//= require bootstrap
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker-rails
+
 window.addEventListener('DOMContentLoaded', event => {
     // Activate feather
     feather.replace();

@@ -35,7 +35,7 @@
                               <table id="datatablesSimple" class="dataTable-table table-bordered border-primary">
                                 <thead class="table-primary" >
                                   <tr>
-                                    <th data-sortable="" style="width: 1.4439%;"><a href="#" class="dataTable-sorter">ID</a></th>
+                                    <th data-sortable="" style="width: 1%;"><a href="#" class="dataTable-sorter">ID</a></th>
                                     <th data-sortable="" style="width: 15.4439%;"><a href="#" class="dataTable-sorter">Loja</a></th>
                                     <th data-sortable="" style="width: 23.1658%;"><a href="#" class="dataTable-sorter">email</a></th>
                                     <th data-sortable="" style="width: 12.7709%;"><a href="#" class="dataTable-sorter">Telefone</a></th>
@@ -51,7 +51,8 @@
                                       <td><%= store.email %></td>
                                       <td><%= store.phone %></td>
                                       <td><%= store.venerable %></td>
-                                      
+                                      <td><%= link_to "Cadastrar Loja", new_backoffice_store_path, class:"btn btn-outline-primary"%></td>
+
                                       <td><button class="btn btn-datatable btn-icon btn-transparent-dark me-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
                                       <circle cx="12" cy="12" r="1"></circle></svg>
                                       </button>
